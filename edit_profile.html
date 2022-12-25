@@ -19,11 +19,11 @@ body {
   letter-spacing: 0.05em;
 }
 
-.container {
-  width: 360px;
+/* .container {
+  width: 550px;
   padding: 64px 15px 24px;
   margin: 0 auto;
-}
+} */
 .container h1{
     letter-spacing: 6px;
     color: #fff;
@@ -131,6 +131,36 @@ button{
     background: grey;
 }
 
+
+@media (min-width: 375px) {
+.container {
+  width: 760px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+}
+
+table td:first-child{
+    width: 10%;
+}
+
+.card .bio{
+    position: relative;
+    margin-top:-5%;
+
+}
+}
+
+@media (max-width: 375px) {
+.container {
+  width: 370px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+}
+
+
+
+}
+
 </style>
 </head>
 <body>
@@ -153,7 +183,7 @@ button{
             
             <div class="contact">
             
-                    <table>
+                    <table width="100%">
                         <tr>
                             <td><img src="asset/fb.png" width="50" height="50"/></td>
                             <td><input name='username' placeholder='Facebook' type='text'></td>
@@ -190,12 +220,13 @@ button{
 
             
             </div>
-            <center>
-                <button type='button' style="width: 40%;" class="active_button">Edit Profile</button>
-                <button type='button' style="width: 40%;">Card Theme</button>
-            </center>
 
         </div>
+
+        <center>
+            <button type='button' style="width: 40%;" class="active_button">Edit Profile</button>
+            <button type='button' style="width: 40%;">Card Theme</button>
+        </center>
 
         
 
