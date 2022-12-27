@@ -91,11 +91,24 @@ button{
 .card_theme .theme{
     width: 40%;
     display: inline-block;
+    transition: all 0.2s ease-in-out;
 }
 
 .card_theme .theme img{
     border: #3b33c7 solid 2px;
     width: 100%;
+    
+}
+
+
+.card_theme .theme:hover{
+    transform: scale(1.02);
+    font-size: large;
+}
+
+
+.active_button{
+    background: grey;
 }
 
 @media (min-width: 580px) {
@@ -119,7 +132,7 @@ button{
 
     <div class="container">
         <center>
-            <a href="digital_card_profile.html"><button type='button' class="active_button">View Profile</button></a>
+            <a href="digital_card_profile.html"><button type='button'>View Profile</button></a>
             <a href="dashboard.html"><button type='button'>Dashboard</button></a>
             <a href="setting.html"><button type='button'>Setting</button></a>
         </center>
@@ -127,17 +140,17 @@ button{
         <h1>Card Themes</h1>
         <div class="card_theme">
             <div class="theme">
-                <img src="asset/theme1.PNG"/>
-                <h3>Dark Theme</h3>
+                <a href="card.html"><img src="asset/theme1.PNG" alt="asset//theme1.PNG"/></a>
+                <h4>Dark Theme</h4>
             </div>
             <div class="theme">
-                <img src="asset/theme1.PNG"/>
-                <h3>Light Theme</h3>
+                <a href="card_light.html"><img src="asset/theme2.PNG" alt="asset//theme2.PNG"/></a>
+                <h4>Light Theme</h4>
             </div>
         </div>
         <center>
             <a href="edit_profile.html"><button type='button' style="width: 40%;">Edit Profile</button></a>
-            <a href="card_theme.html"><button type='button' style="width: 40%;">Card Theme</button></a>
+            <a href="card_theme.html"><button type='button' style="width: 40%;" class="active_button">Card Theme</button></a>
         </center>
 
         
