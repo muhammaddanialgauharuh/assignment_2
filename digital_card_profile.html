@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-  width: 360px;
+  /* width: 360px; */
   padding: 64px 15px 24px;
   margin: 0 auto;
 }
@@ -94,6 +94,7 @@ button{
     background-color: #3b33c7;
     background: url('asset/techmacover.jpg') center;
     background-size: cover;
+    border-radius: 10px;
 
 }
 
@@ -130,15 +131,31 @@ button{
     background: grey;
 }
 
+
+@media (min-width: 580px) {
+.container {
+  width: 580px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+}
+
+.card .bio{
+    position: relative;
+    margin-top:-5%;
+
+}
+}
+
+
 </style>
 </head>
 <body>
 
     <div class="container">
         <center>
-            <button type='button' class="active_button">View Profile</button>
-            <button type='button'>Dashboard</button>
-            <button type='button'>Setting</button>
+            <a href="digital_card_profile.html"><button type='button' class="active_button">View Profile</button></a>
+            <a href="dashboard.html"><button type='button'>Dashboard</button></a>
+            <a href="setting.html"><button type='button'>Setting</button></a>
         </center>
         
         <div class="card">
@@ -152,19 +169,25 @@ button{
             
             <div class="contact">
                 <center>
-                    <img src="asset/fb.png" width="50" height="50"/>
-                    <img src="asset/insta.png" width="50" height="50"/>
-                    <img src="asset/whatsapp.png" width="50" height="50"/>
-                    <img src="asset/linkedin.png" width="50" height="50"/>
-                    <img src="asset/gmail.png" width="50" height="50"/>
-                    <img src="asset/twitter.png" width="50" height="50"/>
-                    <img src="asset/youtube.png" width="50" height="50"/>
-                    <img src="asset/phone.png" width="50" height="50"/>
+                    <div>
+                        <a href="https://www.facebook.com/crdani/"><img src="asset/fb.png" width="50" height="50"/></a>
+                        <a href="https://www.instagram.com/crdani97/"><img src="asset/insta.png" width="50" height="50"/></a>
+                        <a href="https://api.whatsapp.com/send?phone=00923330376076"><img src="asset/whatsapp.png" width="50" height="50"/></a>
+                        <a href="https://www.linkedin.com/in/danialgauhar/"><img src="asset/linkedin.png" width="50" height="50"/></a>
+                    </div>
+                    <div>
+                        <a href="mailto:crdani97@gmail.com"><img src="asset/gmail.png" width="50" height="50"/></a>
+                        <a href="https://twitter.com"><img src="asset/twitter.png" width="50" height="50"/></a>
+                        <a href="https://www.youtube.com/@DanialGauhar/playlists"><img src="asset/youtube.png" width="50" height="50"/></a>
+                        <a href="tel:00923330376076"><img src="asset/phone.png" width="50" height="50"/></a>
+                    </div>
+
+                    <button type='button' style="width: 40%;">Add to Contact</button>
                 </center>
             </div>
             <center>
-                <button type='button' style="width: 40%;">Dashboard</button>
-                <button type='button' style="width: 40%;">Setting</button>
+                <a href="edit_profile.html"><button type='button' style="width: 40%;">Edit Profile</button></a>
+                <a href="card_theme.html"><button type='button' style="width: 40%;">Card Theme</button></a>
             </center>
 
         </div>
