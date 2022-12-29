@@ -70,7 +70,33 @@ if (isset($_POST['registration'])) {
     }
 
 
+    // first check the database to make sure 
+    // a user does not already exist with the same username and/or email
+    $user_check_query = "SELECT * FROM registration WHERE email='$email' ";
+    $result = mysqli_query($db, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+
+
+    if ($user) { // if user exists    
+        if ($user['email'] === $email) {
+          array_push($errors, "email already exists");
+        }
+      }
+
+
+    // Finally, register user if there are no errors in the form
+    if (count($errors) == 0) {
+
+    $query = "INSERT INTO registration (email, password, first_name, last_name, phone_no, gender) 
+              VALUES('$email', '$password', '$first', '$last','$phone','$gender')";
+    mysqli_query($db, $query);
+    $_SESSION['email'] = $email;
+    $_SESSION['success'] = "You are now logged in";
+    header('location: digital_card_profile.php');
+}
     
+
+
 
 }
   
