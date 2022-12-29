@@ -11,7 +11,7 @@ $db = new mysqli($host,$user,$password,$db);
 
 
 // initializing variables
-$username = "";
+
 $email    = "";
 $errors = array(); 
 
@@ -31,17 +31,14 @@ if(isset($_POST['sign'])) {
         $query = "SELECT * FROM registration WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
-          $_SESSION['email'] = $username;
+          $_SESSION['email'] = $email;
           $_SESSION['success'] = "You are now logged in";
           header('location: digital_card_profile.php');
         }else {
             array_push($errors, "Wrong username/password combination");
-            array_push($errors,$query);
         }
     }
   }
-
-
 
 
 // REGISTER USER
@@ -86,14 +83,38 @@ if (isset($_POST['registration'])) {
    if (count($errors) == 0) {
 
     $query = "INSERT INTO registration (email, password, first_name, last_name, phone_no, gender) 
-              VALUES('$email', '$password', '$first', '$last','$phone','$gender')";
+              VALUES('$email', '$password_1', '$first', '$last','$phone','$gender')";
     mysqli_query($db, $query);
+
     $_SESSION['email'] = $email;
     $_SESSION['success'] = "You are now logged in";
     header('location: digital_card_profile.php');
 }
  
 }
+
+// if (isset($_POST['forgot_password'])){
+//     $email = mysqli_real_escape_string($db, $_POST['email']);
+    
+//     // first check the database to make sure  a user does not already exist with the same email
+//     $user_check_query = "SELECT * FROM registration WHERE email='$email' ";
+//     $result = mysqli_query($db, $user_check_query);
+//     $user = mysqli_fetch_assoc($result);
+    
+    
+//     if ($user) { // if user exists    
+//         if ($user['email'] === $email) {
+
+            
+//         }
+//         else{
+//             array_push($errors, "Enter a correct email");
+//         }
+//     }
+
+
+// }
+
   
 
 ?>
