@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $host="localhost";
 $user="root";
@@ -93,27 +94,30 @@ if (isset($_POST['registration'])) {
  
 }
 
-// if (isset($_POST['forgot_password'])){
-//     $email = mysqli_real_escape_string($db, $_POST['email']);
-    
-//     // first check the database to make sure  a user does not already exist with the same email
-//     $user_check_query = "SELECT * FROM registration WHERE email='$email' ";
-//     $result = mysqli_query($db, $user_check_query);
-//     $user = mysqli_fetch_assoc($result);
-    
-    
-//     if ($user) { // if user exists    
-//         if ($user['email'] === $email) {
 
-            
-//         }
-//         else{
-//             array_push($errors, "Enter a correct email");
-//         }
-//     }
+// forgot password
+if (isset($_POST['forgot_password'])){
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    
+    // first check the database to make sure  a user does not already exist with the same email
+    $user_check_query = "SELECT * FROM registration WHERE email='$email' ";
+    $result = mysqli_query($db, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+    
+    
+    if ($user) { // if user exists    
+        if ($user['email'] == $email) {
+            $_SESSION['email'] = $email;
+            $_SESSION['phone_no'] = $user['phone_no'];
+            header('location: make_selection.php');
+        }
+    }
+    else{
+        array_push($errors, "Enter a Correct Email");
+    }
 
 
-// }
+}
 
   
 
