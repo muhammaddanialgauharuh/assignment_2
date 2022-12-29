@@ -43,4 +43,22 @@ if(isset($_POST['sign'])) {
 
 
 
+
+// REGISTER USER
+if (isset($_POST['registration'])) {
+    // receive all input values from the form
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+    $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+    $first = mysqli_real_escape_string($db, $_POST['first']);
+    $last = mysqli_real_escape_string($db, $_POST['last']);
+    $phone = mysqli_real_escape_string($db, $_POST['phone']);
+    $gender = mysqli_real_escape_string($db, $_POST['gender']);
+    
+  
+
+
+}
+  
+
 ?>
