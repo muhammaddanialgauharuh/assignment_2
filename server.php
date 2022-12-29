@@ -56,7 +56,21 @@ if (isset($_POST['registration'])) {
     $gender = mysqli_real_escape_string($db, $_POST['gender']);
     
   
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+    if (empty($email)) { array_push($errors, "Email is required"); }
+    if (empty($password_1)) { array_push($errors, "Password is required"); }
+    if (empty($password_2)) { array_push($errors, "Confrim Password is required"); }
+    if (empty($first)) { array_push($errors, "First Name is required"); }
+    if (empty($last)) { array_push($errors, "Last Name is required"); }
+    if (empty($phone)) { array_push($errors, "Phone No. is required"); }
+    if (empty($gender)) { array_push($errors, "Gender is required"); }
+    if ($password_1 != $password_2) {
+      array_push($errors, "The two passwords do not match");
+    }
 
+
+    
 
 }
   
