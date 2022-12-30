@@ -89,14 +89,14 @@ a:hover{
             <img src="asset/techmazone.png" alt="asset//techmazone.PNG" width="70%"/>
         
         <?php include('errors.php'); ?>
-        <form method="POST" action="#">
+        <form method="POST" action="index.php">
             <input name='email' placeholder='Username' type="email" required>
             <input name='password' placeholder='Password' type='password' required>
             <br/>
-            <p><a class="forgot_password" href="forgot_password.html">Forgot Password?</a></p>
+            <p><a class="forgot_password" href="forgot_password.php">Forgot Password?</a></p>
             <button type='submit' name="sign">Sign In</button>
         </form>
-        <a href="registration.html"><button type='button'>Registration</button></a>
+        <a href="registration.php"><button type='button'>Registration</button></a>
         </center>
 
     </div>
