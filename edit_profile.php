@@ -149,6 +149,9 @@ table td:first-child{
     margin-top:-5%;
 
 }
+
+
+
 }
 
 
@@ -165,50 +168,74 @@ table td:first-child{
         </center>
         
         <div class="card">
-            <div class="cover"></div>
+            <!-- <div class="cover"></div>
             <div class="dp"></div>
             <div class="bio">
                 <h2>Danial Gauhar</h2>
                 <p style="color: rgb(192, 191, 191);"><b>Data Scientist</b></p>
                 <p style="color: rgb(192, 191, 191); font-size:small">An Enthusiastic & Passionate Trainer Currently Giving Training To 1000+ Trainees Through Different Platforms.</p>
             </div>
-            
+             -->
             <div class="contact">
-            
+            <form method="post" enctype="multipart/form-data" action="edit_profile.php">
                     <table width="100%">
                         <tr>
+                            <td><img src="asset/cover.png" width="50" height="50"/></td>
+                            <td><input name='display_cover' placeholder='Display Cover' type='file'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="asset/dp.png" width="50" height="50"/></td>
+                            <td><input name='display_picture' placeholder='Display Picture' type='file'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="asset/name.png" width="50" height="50"/></td>
+                            <td><input name='display_name' placeholder='Display Name' type='text'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="asset/job.png" width="50" height="50"/></td>
+                            <td><input name='job' placeholder='Job Position' type='text'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="asset/bio.png" width="50" height="50"/></td>
+                            <td><input name='bio' placeholder='Bio' type='text'></td>
+                        </tr>
+                        <tr>
                             <td><img src="asset/fb.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Facebook' type='text'></td>
+                            <td><input name='fb' placeholder='Facebook' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/insta.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Instagram' type='text'></td>
+                            <td><input name='instagram' placeholder='Instagram' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/whatsapp.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='+92 333 0376076' type='text'></td>
+                            <td><input name='phone' placeholder='+92 333 0376076' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/linkedin.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Linkedin' type='text'></td>
+                            <td><input name='linkedin' placeholder='Linkedin' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/gmail.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Gmail' type='text'></td>
+                            <td><input name='mail' placeholder='Gmail' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/twitter.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Twitter' type='text'></td>
+                            <td><input name='twitter' placeholder='Twitter' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/youtube.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='Youtube' type='text'></td>
+                            <td><input name='youtube' placeholder='Youtube' type='text'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/phone.png" width="50" height="50"/></td>
                             <td><input name='username' placeholder='+92 333 0376076' type='text'></td>
                         </tr>
                     </table>
+                    <center>
+                        <button type='submit' style="width: 50%;">Save</button>
+                    </center>
+                </form>
 
             
             </div>
