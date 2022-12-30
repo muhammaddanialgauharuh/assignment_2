@@ -1,3 +1,7 @@
+<?php include('server.php') ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,7 +180,10 @@ table td:first-child{
                 <p style="color: rgb(192, 191, 191); font-size:small">An Enthusiastic & Passionate Trainer Currently Giving Training To 1000+ Trainees Through Different Platforms.</p>
             </div>
              -->
+
+             
             <div class="contact">
+                <?php include('errors.php'); ?>
             <form method="post" enctype="multipart/form-data" action="edit_profile.php">
                     <table width="100%">
                         <tr>
@@ -185,7 +192,7 @@ table td:first-child{
                         </tr>
                         <tr>
                             <td><img src="asset/dp.png" width="50" height="50"/></td>
-                            <td><input name='display_picture' placeholder='Display Picture' type='file'></td>
+                            <td><input name='display_picture' placeholder='Display Picture' type='file' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/name.png" width="50" height="50"/></td>
@@ -233,7 +240,7 @@ table td:first-child{
                         </tr>
                     </table>
                     <center>
-                        <button type='submit' style="width: 50%;">Save</button>
+                        <button type='submit' style="width: 50%;" name="save">Save</button>
                     </center>
                 </form>
 
@@ -247,7 +254,6 @@ table td:first-child{
             <button type='button' style="width: 40%;">Card Theme</button>
         </center>
 
-        
 
     </div>
     

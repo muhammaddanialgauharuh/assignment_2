@@ -97,9 +97,8 @@ if (isset($_POST['registration'])) {
 
 // forgot password
 if (isset($_POST['forgot_password'])){
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    
-    // first check the database to make sure  a user does not already exist with the same email
+    $email = mysqli_real_escape_string($db, $_POST['email']);    
+
     $user_check_query = "SELECT * FROM registration WHERE email='$email' ";
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
@@ -118,6 +117,96 @@ if (isset($_POST['forgot_password'])){
 
 
 }
+
+
+
+
+
+
+
+// edit profile 
+
+
+if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES['display_cover'])) {
+
+    
+    $img_upload_path = "";
+    $cover_img_upload_path = "";
+
+	echo "<pre>";
+	print_r($_FILES['display_picture']);
+    print_r($_FILES['display_cover']);
+	echo "</pre>";
+
+	$img_name = $_FILES['display_picture']['name'];
+	$img_size = $_FILES['display_picture']['size'];
+	$tmp_name = $_FILES['display_picture']['tmp_name'];
+	$error = $_FILES['display_picture']['error'];
+
+    $cover_img_name = $_FILES['display_cover']['name'];
+	$cover_img_size = $_FILES['display_cover']['size'];
+	$cover_tmp_name = $_FILES['display_cover']['tmp_name'];
+	$cover_error = $_FILES['display_cover']['error'];
+
+	if ($error === 0) {
+		if ($img_size > 125000) {
+			$em = "Sorry, your Display Picture is too large.";
+            array_push($errors, $em);
+		}else {
+			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+			$img_ex_lc = strtolower($img_ex);
+
+			$allowed_exs = array("jpg", "jpeg", "png"); 
+
+			if (in_array($img_ex_lc, $allowed_exs)) {
+				$new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+				$img_upload_path = 'uploads/'.$new_img_name;
+				move_uploaded_file($tmp_name, $img_upload_path);
+
+			}else {
+				$em = "Display Picture : You can't upload files of this type";
+                array_push($errors, $em);
+			}
+		}
+	}else {
+		$em = "unknown error occurred!";
+        array_push($errors, $em);
+	}
+
+    if ($cover_error === 0) {
+		if ($cover_img_size > 500000) {
+			$em = "Sorry, your Display Cover is too large.";
+            array_push($errors, $em);
+		}else {
+			$cover_img_ex = pathinfo($cover_img_name, PATHINFO_EXTENSION);
+			$cover_img_ex_lc = strtolower($cover_img_ex);
+
+			$allowed_exs = array("jpg", "jpeg", "png"); 
+
+			if (in_array($cover_img_ex_lc, $allowed_exs)) {
+				$cover_new_img_name = uniqid("IMG-", true).'.'.$cover_img_ex_lc;
+				$cover_img_upload_path = 'uploads/'.$cover_new_img_name;
+				move_uploaded_file($cover_tmp_name, $cover_img_upload_path);
+
+                // echo "<img src='$img_upload_path' alt = '$img_upload_path' />";
+			}else {
+				$em = "Display Cover : You can't upload files of this type";
+                array_push($errors, $em);
+			}
+		}
+	}else {
+		$em = "unknown error occurred!";
+        array_push($errors, $em);
+	}
+
+    if($img_upload_path != "" && $cover_img_upload_path != ""){
+        echo $img_upload_path;
+        echo $cover_img_upload_path;
+
+    }
+
+}
+
 
   
 
