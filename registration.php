@@ -1,3 +1,5 @@
+<?php include('server.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,14 +103,14 @@ input[type="radio"]:checked+label {
 </head>
 <body>
     <h1>
-        <a href="index.html" style="padding: 20px;"> <-Back </a>
+        <a href="index.php" style="padding: 20px;"> <-Back </a>
     </h1>
 
     <div class="container">
         <h1>Registration</h1>
         <center>
-        
-        <form method="POST" action="registration.php">
+        <?php include('errors.php'); ?>
+        <form method="post" action="registration.php">
             <input name='email' placeholder='Email' type='text'>
             <input name='password_1' placeholder='Password' type='password'>
             <input name='password_2' placeholder='Confrim Password' type='password'>
@@ -116,12 +118,12 @@ input[type="radio"]:checked+label {
             <input name='last' placeholder='Last Name' type='text'>
             <input name='phone' placeholder='Phone No.' type='text'>
             <br/><br/>
-            <input type="radio" id="male" name="gender" value="Male">
+            <input type="radio" id="male" name="gender" value="Male" checked>
             <label for="male">Male</label>
             <input type="radio" id="female" name="gender" value="Female">
             <label for="female">Female</label>
             <br/><br/><br/>
-            <button type='button' names="registration">Registration</button>
+            <button type='submit' name="registration">Registration</button>
         </form>
         </center>
 
