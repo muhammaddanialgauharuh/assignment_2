@@ -1,3 +1,5 @@
+<?php include('server.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,8 +81,9 @@ a:hover{
 </head>
 <body>
     <h1>
-        <a href="index.html" style="padding: 20px;"> <-Back </a>
+        <a href="index.php" style="padding: 20px;"> <-Back </a>
     </h1>
+
     
     <div class="container">
         <center>
@@ -88,10 +91,13 @@ a:hover{
         
         <h2>Forgot Password</h2>
         <p>Provide your account's email for which you want to reset your password!</p>
-        <form>
-            <input name='username' placeholder='Username' type='text'>
+
+        <?php include('errors.php'); ?>
+
+        <form method="post" action="forgot_password.php">
+            <input name='email' placeholder='email' type='text'>
             <br/><br/><br/>
-            <a href="make_selection.html"><button type='button'>Next</button></a>
+            <button type='submit' name="forgot_password">Next</button>
         </form>
         
         </center>
