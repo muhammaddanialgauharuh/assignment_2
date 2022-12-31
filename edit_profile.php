@@ -188,7 +188,7 @@ table td:first-child{
                     <table width="100%">
                         <tr>
                             <td><img src="asset/cover.png" width="50" height="50"/></td>
-                            <td><input name='display_cover' placeholder='Display Cover' type='file'></td>
+                            <td><input name='display_cover' placeholder='Display Cover' type='file' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/dp.png" width="50" height="50"/></td>
@@ -196,47 +196,47 @@ table td:first-child{
                         </tr>
                         <tr>
                             <td><img src="asset/name.png" width="50" height="50"/></td>
-                            <td><input name='display_name' placeholder='Display Name' type='text'></td>
+                            <td><input name='display_name' placeholder='Display Name' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/job.png" width="50" height="50"/></td>
-                            <td><input name='job' placeholder='Job Position' type='text'></td>
+                            <td><input name='job' placeholder='Job Position' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/bio.png" width="50" height="50"/></td>
-                            <td><input name='bio' placeholder='Bio' type='text'></td>
+                            <td><input name='bio' placeholder='Bio' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/fb.png" width="50" height="50"/></td>
-                            <td><input name='fb' placeholder='Facebook' type='text'></td>
+                            <td><input name='fb' placeholder='Facebook' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/insta.png" width="50" height="50"/></td>
-                            <td><input name='instagram' placeholder='Instagram' type='text'></td>
+                            <td><input name='instagram' placeholder='Instagram' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/whatsapp.png" width="50" height="50"/></td>
-                            <td><input name='phone' placeholder='+92 333 0376076' type='text'></td>
+                            <td><input name='whatsapp' placeholder='+92 333 0376076' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/linkedin.png" width="50" height="50"/></td>
-                            <td><input name='linkedin' placeholder='Linkedin' type='text'></td>
+                            <td><input name='linkedin' placeholder='Linkedin' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/gmail.png" width="50" height="50"/></td>
-                            <td><input name='mail' placeholder='Gmail' type='text'></td>
+                            <td><input name='mail' placeholder='Gmail' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/twitter.png" width="50" height="50"/></td>
-                            <td><input name='twitter' placeholder='Twitter' type='text'></td>
+                            <td><input name='twitter' placeholder='Twitter' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/youtube.png" width="50" height="50"/></td>
-                            <td><input name='youtube' placeholder='Youtube' type='text'></td>
+                            <td><input name='youtube' placeholder='Youtube' type='text' required></td>
                         </tr>
                         <tr>
                             <td><img src="asset/phone.png" width="50" height="50"/></td>
-                            <td><input name='username' placeholder='+92 333 0376076' type='text'></td>
+                            <td><input name='phone' placeholder='+92 333 0376076' type='text' required></td>
                         </tr>
                     </table>
                     <center>

@@ -31,8 +31,10 @@ if(isset($_POST['sign'])) {
     if (count($errors) == 0) {
         $query = "SELECT * FROM registration WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
+        $user = mysqli_fetch_assoc($results);
         if (mysqli_num_rows($results) == 1) {
           $_SESSION['email'] = $email;
+          $_SESSION['id'] = $user['id'];
           $_SESSION['success'] = "You are now logged in";
           header('location: digital_card_profile.php');
         }else {
@@ -128,10 +130,21 @@ if (isset($_POST['forgot_password'])){
 
 
 if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES['display_cover'])) {
-
     
+    $id = $_SESSION['id'];
     $img_upload_path = "";
     $cover_img_upload_path = "";
+    $display_name = mysqli_real_escape_string($db, $_POST['display_name']);
+    $job = mysqli_real_escape_string($db, $_POST['job']);
+    $bio = mysqli_real_escape_string($db, $_POST['bio']);
+    $fb = mysqli_real_escape_string($db, $_POST['fb']);
+    $instagram = mysqli_real_escape_string($db, $_POST['instagram']);
+    $whatsapp = mysqli_real_escape_string($db, $_POST['whatsapp']);
+    $linkedin = mysqli_real_escape_string($db, $_POST['linkedin']);
+    $mail = mysqli_real_escape_string($db, $_POST['mail']);
+    $twitter = mysqli_real_escape_string($db, $_POST['twitter']);
+    $youtube = mysqli_real_escape_string($db, $_POST['youtube']);
+    $phone = mysqli_real_escape_string($db, $_POST['phone']);
 
 	echo "<pre>";
 	print_r($_FILES['display_picture']);
@@ -149,7 +162,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 	$cover_error = $_FILES['display_cover']['error'];
 
 	if ($error === 0) {
-		if ($img_size > 125000) {
+		if ($img_size > 1000000) {
 			$em = "Sorry, your Display Picture is too large.";
             array_push($errors, $em);
 		}else {
@@ -174,7 +187,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 	}
 
     if ($cover_error === 0) {
-		if ($cover_img_size > 500000) {
+		if ($cover_img_size > 1000000) {
 			$em = "Sorry, your Display Cover is too large.";
             array_push($errors, $em);
 		}else {
@@ -200,8 +213,27 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 	}
 
     if($img_upload_path != "" && $cover_img_upload_path != ""){
-        echo $img_upload_path;
-        echo $cover_img_upload_path;
+        // echo $img_upload_path;
+        // echo $cover_img_upload_path;
+        // echo $display_name;
+        // echo $job;
+        // echo $bio;
+        // echo $fb;
+        // echo $instagram;
+        // echo $linkedin;
+        // echo $mail;
+        // echo $twitter;
+        // echo $youtube;
+        // echo $phone;
+
+        // Insert into Database
+		$sql = "INSERT INTO profile(id,cover,dp,display_name, job, bio, facebook, instagram, whatsapp, linkedin, gmail, twitter, youtube, phone) 
+        VALUES('$id','$cover_img_upload_path','$img_upload_path',
+        '$display_name','$job','$bio','$fb','$instagram','$whatsapp','$linkedin','$mail','$twitter','$youtube','$phone')";
+
+        mysqli_query($db, $sql);
+        
+
 
     }
 
