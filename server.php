@@ -89,9 +89,17 @@ if (isset($_POST['registration'])) {
               VALUES('$email', '$password_1', '$first', '$last','$phone','$gender')";
     mysqli_query($db, $query);
 
-    $_SESSION['email'] = $email;
-    $_SESSION['success'] = "You are now logged in";
-    header('location: digital_card_profile.php');
+    $query = "SELECT * FROM registration WHERE email='$email' ";
+    $results = mysqli_query($db, $query);
+    $user = mysqli_fetch_assoc($results);
+    $id = $user["id"];
+    
+    $query = "INSERT INTO profile(id) VALUES('$id')";
+    mysqli_query($db, $query);
+
+    // $_SESSION['email'] = $email;
+    // $_SESSION['success'] = "You are now logged in";
+    header('location: index.php');
 }
  
 }
@@ -226,10 +234,11 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
         // echo $youtube;
         // echo $phone;
 
-        // Insert into Database
-		$sql = "INSERT INTO profile(id,cover,dp,display_name, job, bio, facebook, instagram, whatsapp, linkedin, gmail, twitter, youtube, phone) 
-        VALUES('$id','$cover_img_upload_path','$img_upload_path',
-        '$display_name','$job','$bio','$fb','$instagram','$whatsapp','$linkedin','$mail','$twitter','$youtube','$phone')";
+        // Update into Database
+		$sql = "UPDATE profile SET
+        cover = '$cover_img_upload_path', dp = '$img_upload_path',
+        display_name = '$display_name', job = '$job', bio = '$bio', facebook = '$fb', instagram = '$instagram', whatsapp = '$whatsapp', linkedin = '$linkedin',
+        gmail = '$mail', twitter = '$twitter', youtube = '$youtube', phone = '$phone' where id = '$id' ";
 
         mysqli_query($db, $sql);
         
