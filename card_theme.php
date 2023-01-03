@@ -126,9 +126,9 @@ button{
 
     <div class="container">
         <center>
-            <a href="digital_card_profile.html"><button type='button'>View Profile</button></a>
-            <a href="dashboard.html"><button type='button'>Dashboard</button></a>
-            <a href="setting.html"><button type='button'>Setting</button></a>
+            <a href="digital_card_profile.php"><button type='button'>View Profile</button></a>
+            <a href="dashboard.php"><button type='button'>Dashboard</button></a>
+            <a href="setting.php"><button type='button'>Setting</button></a>
         </center>
 
         <h1>Card Themes</h1>

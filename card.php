@@ -29,6 +29,12 @@
         $youtube = $user["youtube"];
         $phone = $user["phone"];
         $theme_css = $user["theme_name"];
+
+        $card_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id."&theme=".$theme_css; 
+        
+        // echo "<a href=".$card_link.">hello</a>";
+        $query = "UPDATE profile SET card_link='$card_link' WHERE id=$id";
+        mysqli_query($db, $query);
     }
     else{
         echo "close";

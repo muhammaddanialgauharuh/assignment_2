@@ -6,11 +6,12 @@
 if(isset($_GET["Active_Theme"])){
 
     $theme = $_GET["Active_Theme"];
+    $id = $_SESSION["id"];
 
-    $sql = "UPDATE profile SET theme_name = $theme Where id = 5";
+    $sql = "UPDATE profile SET theme_name = $theme Where id = $id" ;
     mysqli_query($db, $sql);
     header('location: card.php?id='.$_SESSION['id']."&theme=".$theme);
-    
+
 }
 
 ?>
@@ -69,13 +70,8 @@ if(isset($_GET["Active_Theme"])){
                 <button type='submit' name="Active_Theme" value = "<?php echo $_GET["theme_name_str"] ?>" style="width: 80%; background-color: crimson;"><b>Active This Theme</b></button>
             <form>
             </center>
-
         </div>
-
-        
-
     </div>
-
     
 </body>
 </html>
