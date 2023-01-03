@@ -101,7 +101,6 @@ button{
 }
 
 
-
 .active_button{
     background: grey;
 }
@@ -133,7 +132,7 @@ button{
         </center>
 
         <h1>Card Themes</h1>
-    <a href="card_selection.php?theme_name=dark.css">
+    <a href="card_selection.php?theme_name=dark.css&theme_name_str='dark.css'">
         <div class="card_theme">
             <button style="width: 40%">
                 <div class="theme">
@@ -142,7 +141,7 @@ button{
                 </div>
     </a>
 
-    <a href="card_selection.php?theme_name=light.css">
+    <a href="card_selection.php?theme_name=light.css&theme_name_str='light.css'">
         <div class="card_theme">
             <button style="width: 40%">
                 <div class="theme">
@@ -158,8 +157,6 @@ button{
             <a href="edit_profile.html"><button type='button' style="width: 40%;">Edit Profile</button></a>
             <a href="card_theme.html"><button type='button' style="width: 40%;" class="active_button">Card Theme</button></a>
         </center>
-
-        
 
     </div>
     

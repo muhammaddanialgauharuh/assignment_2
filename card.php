@@ -1,19 +1,44 @@
-<?php include('server.php') ?>
-<?php include('profile_fetching.php') ?>
-
 <?php
 
-if(isset($_GET["Active_Theme"])){
+    if(isset($_GET["id"])){
+        $id = $_GET["id"];
 
-    $theme = $_GET["Active_Theme"];
+        $host="localhost";
+        $user="root";
+        $password="";
+        $db="digitalcardworld";
 
-    $sql = "UPDATE profile SET theme_name = $theme Where id = 5";
-    mysqli_query($db, $sql);
-    header('location: card.php?id='.$_SESSION['id']."&theme=".$theme);
-    
-}
+
+        $db = new mysqli($host,$user,$password,$db);
+
+        $user_check_query = "SELECT * FROM profile WHERE id='$id' ";
+        $result = mysqli_query($db, $user_check_query);
+        $user = mysqli_fetch_assoc($result);
+
+        $dp = $user["dp"];
+        $cover = $user["cover"];
+        $display_name = $user["display_name"];
+        $job = $user["job"];
+        $bio = $user["bio"];
+        $facebook = $user["facebook"];
+        $instagram = $user["instagram"];
+        $whatsapp = $user["whatsapp"];
+        $linkedin = $user["linkedin"];
+        $mail = $user["gmail"];
+        $twitter = $user["twitter"];
+        $youtube = $user["youtube"];
+        $phone = $user["phone"];
+        $theme_css = $user["theme_name"];
+    }
+    else{
+        echo "close";
+    }
+
+
+
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,16 +47,13 @@ if(isset($_GET["Active_Theme"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    <link rel="stylesheet" href="<?php echo $_GET["theme_name"] ?>">
-
+    <link rel="stylesheet" href="<?php echo $theme_css ?>">
 
 </head>
 <body>
-    <br/>
-    <h1>
-        <a href="card_theme.php" style="padding: 20px 20px;"> <-Back </a>
-    </h1>
+
+<body>
+
 
     <div class="container">
         
@@ -40,7 +62,7 @@ if(isset($_GET["Active_Theme"])){
             <div class="dp"></div>
             <div class="bio">
                 <h2><?php echo $display_name ?></h2>
-                <p><b><?php echo $job ?></b></p>
+                <p ><b><?php echo $job ?></b></p>
                 <p style="font-size:small"><?php echo $bio ?></p>
             </div>
             
@@ -64,11 +86,6 @@ if(isset($_GET["Active_Theme"])){
                 </center>
             </div>
 
-            <center>
-            <form method="get" action="card_selection.php">
-                <button type='submit' name="Active_Theme" value = "<?php echo $_GET["theme_name_str"] ?>" style="width: 80%; background-color: crimson;"><b>Active This Theme</b></button>
-            <form>
-            </center>
 
         </div>
 
@@ -76,6 +93,8 @@ if(isset($_GET["Active_Theme"])){
 
     </div>
 
+    
+</body>
     
 </body>
 </html>
