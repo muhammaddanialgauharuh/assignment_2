@@ -94,8 +94,18 @@ if (isset($_POST['registration'])) {
     $user = mysqli_fetch_assoc($results);
     $id = $user["id"];
     
-    $query = "INSERT INTO profile(id) VALUES('$id')";
+
+    $card_link = 'http://'.$_SERVER['HTTP_HOST']."/Mobile_Computing_Assignment_2/card.php?id=".$id;
+    // $card_link = 'http://'.$_SERVER['HTTP_HOST']."/card.php?id=".$id ;
+
+    $query = "INSERT INTO profile(id,card_link) VALUES('$id','$card_link')";
     mysqli_query($db, $query);
+
+
+    $query = "INSERT INTO dashboard(id) VALUES('$id')";
+    mysqli_query($db, $query);
+
+
 
     // $_SESSION['email'] = $email;
     // $_SESSION['success'] = "You are now logged in";
@@ -154,10 +164,10 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
     $youtube = mysqli_real_escape_string($db, $_POST['youtube']);
     $phone = mysqli_real_escape_string($db, $_POST['phone']);
 
-	echo "<pre>";
-	print_r($_FILES['display_picture']);
-    print_r($_FILES['display_cover']);
-	echo "</pre>";
+	// echo "<pre>";
+	// print_r($_FILES['display_picture']);
+    // print_r($_FILES['display_cover']);
+	// echo "</pre>";
 
 	$img_name = $_FILES['display_picture']['name'];
 	$img_size = $_FILES['display_picture']['size'];

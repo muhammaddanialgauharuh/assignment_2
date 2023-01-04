@@ -1,3 +1,6 @@
+<?php include('server.php') ?>
+<?php include('profile_fetching.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,28 +85,55 @@ button{
     font-size: 9px;
 }
 
-.card_theme{
-    /* padding: 10px; */
-    text-align: center;
-
-}
-
-.card_theme .theme{
-    width: 100%;
-    display: inline-block;
-    transition: all 0.2s ease-in-out;
-}
-
-.card_theme .theme img{
-    border: #3b33c7 solid 2px;
-    width: 100%;
+.card{
+    /* height: 600px; */
+    background-color: #212121;
     
 }
 
+.card .cover{
+    width: 100%;
+    height: 20vh;
+    background-color: #3b33c7;
+    background: url('asset/techmacover.jpg') center;
+    background-size: cover;
+    border-radius: 10px;
+
+}
+
+.card .dp{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 360px;
+    position: relative;
+    top: -50px;
+    left: 5%;
+    background: url('asset/danial.jpg');
+    background-position: 0 -10px;
+    background-size: cover;
+}
+
+.card .bio{
+    position: relative;
+    margin-top:-10%;
+
+}
+
+.card .contact{
+    width: 100%;
+    height: 20%;
+
+}
+
+.card .contact img{
+    margin: 10px;
+}
 
 .active_button{
     background: grey;
 }
+
 
 @media (min-width: 580px) {
 .container {
@@ -128,35 +158,17 @@ button{
         <center>
             <a href="digital_card_profile.php"><button type='button'>View Profile</button></a>
             <a href="dashboard.php"><button type='button'>Dashboard</button></a>
-            <a href="setting.php"><button type='button'>Setting</button></a>
+            <a href="setting.php"><button type='button' class="active_button">Setting</button></a>
+        
+        
+            <br/><br/><br/>
+            <h2>Your Digital Card URL</h2>
+            <br/>
+            <a href="<?php echo $card_link; ?>"><?php echo $card_link; ?></a>
+            <br/><br/><br/>
+            <a href="index.php"><button type='button' style="width: 60%;">Logout</button></a>
         </center>
-
-        <h1>Card Themes</h1>
-    <a href="card_selection.php?theme_name=dark.css&theme_name_str='dark.css'">
-        <div class="card_theme">
-            <button style="width: 40%">
-                <div class="theme">
-                    <img src="asset/theme1.PNG" alt="asset//theme1.PNG"/>
-                    <h2>Dark Theme</h2>
-                </div>
-    </a>
-
-    <a href="card_selection.php?theme_name=light.css&theme_name_str='light.css'">
-        <div class="card_theme">
-            <button style="width: 40%">
-                <div class="theme">
-                    <img src="asset/theme2.PNG" alt="asset//theme2.PNG"/>
-                    <h2>Light Theme</h2>
-                </div>
-    </a>
-    
-        </div>
-    </form>
-
-        <center>
-            <a href="edit_profile.php"><button type='button' style="width: 40%;">Edit Profile</button></a>
-            <a href="card_theme.php"><button type='button' style="width: 40%;" class="active_button">Card Theme</button></a>
-        </center>
+        
 
     </div>
     

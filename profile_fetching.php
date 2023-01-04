@@ -29,5 +29,6 @@
     $twitter = $user["twitter"];
     $youtube = $user["youtube"];
     $phone = $user["phone"];
+    $card_link = $user["card_link"];
 
 ?>

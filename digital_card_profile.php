@@ -1,3 +1,7 @@
+<?php include('server.php') ?>
+<?php include('profile_fetching.php') ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +96,8 @@ button{
     width: 100%;
     height: 20vh;
     background-color: #3b33c7;
-    background: url('asset/techmacover.jpg') center;
+    /* background: url('asset/techmacover.jpg') center; */
+    background: url('<?php echo $cover ?>') center;
     background-size: cover;
     border-radius: 10px;
 
@@ -106,7 +111,8 @@ button{
     position: relative;
     top: -50px;
     left: 5%;
-    background: url('asset/danial.jpg');
+    /* background: url('asset/danial.jpg'); */
+    background: url('<?php echo $dp ?>');
     background-position: 0 -10px;
     background-size: cover;
 }
@@ -162,24 +168,24 @@ button{
             <div class="cover"></div>
             <div class="dp"></div>
             <div class="bio">
-                <h2>Danial Gauhar</h2>
-                <p style="color: rgb(192, 191, 191);"><b>Data Scientist</b></p>
-                <p style="color: rgb(192, 191, 191); font-size:small">An Enthusiastic & Passionate Trainer Currently Giving Training To 1000+ Trainees Through Different Platforms.</p>
+                <h2><?php echo $display_name ?></h2>
+                <p style="color: rgb(192, 191, 191);"><b><?php echo $job ?></b></p>
+                <p style="color: rgb(192, 191, 191); font-size:small"><?php echo $bio ?></p>
             </div>
             
             <div class="contact">
                 <center>
                     <div>
-                        <a href="https://www.facebook.com/crdani/"><img src="asset/fb.png" width="50" height="50"/></a>
-                        <a href="https://www.instagram.com/crdani97/"><img src="asset/insta.png" width="50" height="50"/></a>
-                        <a href="https://api.whatsapp.com/send?phone=+923330376076"><img src="asset/whatsapp.png" width="50" height="50"/></a>
-                        <a href="https://www.linkedin.com/in/danialgauhar/"><img src="asset/linkedin.png" width="50" height="50"/></a>
+                        <a href="<?php echo $facebook ?>"><img src="asset/fb.png" width="50" height="50"/></a>
+                        <a href="<?php echo $instagram ?>"><img src="asset/insta.png" width="50" height="50"/></a>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $whatsapp ?>"><img src="asset/whatsapp.png" width="50" height="50"/></a>
+                        <a href="<?php echo $linkedin ?>"><img src="asset/linkedin.png" width="50" height="50"/></a>
                     </div>
                     <div>
-                        <a href="mailto:crdani97@gmail.com"><img src="asset/gmail.png" width="50" height="50"/></a>
-                        <a href="https://twitter.com"><img src="asset/twitter.png" width="50" height="50"/></a>
-                        <a href="https://www.youtube.com/@DanialGauhar/playlists"><img src="asset/youtube.png" width="50" height="50"/></a>
-                        <a href="tel:+923330376076"><img src="asset/phone.png" width="50" height="50"/></a>
+                        <a href="mailto:<?php echo $mail ?>"><img src="asset/gmail.png" width="50" height="50"/></a>
+                        <a href="<?php echo $twitter ?>"><img src="asset/twitter.png" width="50" height="50"/></a>
+                        <a href="<?php echo $youtube ?>"><img src="asset/youtube.png" width="50" height="50"/></a>
+                        <a href="tel:<?php echo $phone ?>"><img src="asset/phone.png" width="50" height="50"/></a>
                     </div>
 
                     <a href="vcf/Danial Gauhar.vcf" download><button type='button' style="width: 60%;"><b>Add to Contact</b></button></a>
@@ -188,8 +194,8 @@ button{
             </div>
 
             <center>
-                <a href="edit_profile.html"><button type='button' style="width: 40%;">Edit Profile</button></a>
-                <a href="card_theme.html"><button type='button' style="width: 40%;">Card Theme</button></a>
+                <a href="edit_profile.php"><button type='button' style="width: 40%;">Edit Profile</button></a>
+                <a href="card_theme.php"><button type='button' style="width: 40%;">Card Theme</button></a>
             </center>
 
         </div>

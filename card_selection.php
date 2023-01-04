@@ -10,7 +10,8 @@ if(isset($_GET["Active_Theme"])){
 
     $sql = "UPDATE profile SET theme_name = $theme Where id = $id" ;
     mysqli_query($db, $sql);
-    header('location: card.php?id='.$_SESSION['id']."&theme=".$theme);
+    // header('location: card.php?id='.$_SESSION['id']."&theme=".$theme);
+    header('location: setting.php');
 
 }
 
