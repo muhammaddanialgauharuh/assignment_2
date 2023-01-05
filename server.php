@@ -155,7 +155,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
     $display_name = mysqli_real_escape_string($db, $_POST['display_name']);
     $job = mysqli_real_escape_string($db, $_POST['job']);
     $bio = mysqli_real_escape_string($db, $_POST['bio']);
-    $fb = mysqli_real_escape_string($db, $_POST['fb']);
+    $facebook = mysqli_real_escape_string($db, $_POST['facebook']);
     $instagram = mysqli_real_escape_string($db, $_POST['instagram']);
     $whatsapp = mysqli_real_escape_string($db, $_POST['whatsapp']);
     $linkedin = mysqli_real_escape_string($db, $_POST['linkedin']);
@@ -163,6 +163,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
     $twitter = mysqli_real_escape_string($db, $_POST['twitter']);
     $youtube = mysqli_real_escape_string($db, $_POST['youtube']);
     $phone = mysqli_real_escape_string($db, $_POST['phone']);
+    $website = mysqli_real_escape_string($db, $_POST['website']);
 
 	// echo "<pre>";
 	// print_r($_FILES['display_picture']);
@@ -201,7 +202,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 		}
 	}else {
 		$em = "unknown error occurred!";
-        array_push($errors, $em);
+        // array_push($errors, $em);
 	}
 
     if ($cover_error === 0) {
@@ -227,10 +228,10 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 		}
 	}else {
 		$em = "unknown error occurred!";
-        array_push($errors, $em);
+        // array_push($errors, $em);
 	}
 
-    if($img_upload_path != "" && $cover_img_upload_path != ""){
+    if($img_upload_path != ""){
         // echo $img_upload_path;
         // echo $cover_img_upload_path;
         // echo $display_name;
@@ -245,17 +246,84 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
         // echo $phone;
 
         // Update into Database
-		$sql = "UPDATE profile SET
-        cover = '$cover_img_upload_path', dp = '$img_upload_path',
-        display_name = '$display_name', job = '$job', bio = '$bio', facebook = '$fb', instagram = '$instagram', whatsapp = '$whatsapp', linkedin = '$linkedin',
-        gmail = '$mail', twitter = '$twitter', youtube = '$youtube', phone = '$phone' where id = '$id' ";
+		// $sql = "UPDATE profile SET
+        // cover = '$cover_img_upload_path', dp = '$img_upload_path',
+        // display_name = '$display_name', job = '$job', bio = '$bio', facebook = '$facebook', instagram = '$instagram', whatsapp = '$whatsapp', linkedin = '$linkedin',
+        // gmail = '$mail', twitter = '$twitter', youtube = '$youtube', phone = '$phone', website = '$website' where id = '$id' ";
+
+        $sql = "UPDATE profile SET dp = '$img_upload_path' where id = '$id' ";
+
+        echo $sql;
 
         mysqli_query($db, $sql);
-        
-
-
     }
 
+    if($cover_img_upload_path != ""){
+        $sql = "UPDATE profile SET cover = '$cover_img_upload_path' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($display_name != ""){
+        $sql = "UPDATE profile SET display_name = '$display_name' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($job != ""){
+        $sql = "UPDATE profile SET job = '$job' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($bio != ""){
+        $sql = "UPDATE profile SET bio = '$bio' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($facebook != ""){
+        $sql = "UPDATE profile SET facebook = '$facebook' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($instagram != ""){
+        $sql = "UPDATE profile SET instagram = '$instagram' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($whatsapp != ""){
+        $sql = "UPDATE profile SET whatsapp = '$whatsapp' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($linkedin != ""){
+        $sql = "UPDATE profile SET linkedin = '$linkedin' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($mail != ""){
+        $sql = "UPDATE profile SET gmail = '$mail' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($twitter != ""){
+        $sql = "UPDATE profile SET twitter = '$twitter' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($youtube != ""){
+        $sql = "UPDATE profile SET youtube = '$youtube' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($phone != ""){
+        $sql = "UPDATE profile SET phone = '$phone' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    if($website != ""){
+        $sql = "UPDATE profile SET website = '$website' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }
+    
 }
 
 
