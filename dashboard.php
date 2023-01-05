@@ -1,3 +1,29 @@
+<?php include('server.php') ?>
+<?php include('profile_fetching.php') ?>
+
+<?php
+
+
+    $email = $_SESSION['email'];
+    $id = $_SESSION['id'];
+
+
+    $user_check_query = "SELECT * FROM dashboard WHERE id='$id' ";
+    $result = mysqli_query($db, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+
+
+    $facebook_link = $user["facebook"];
+    $instagram_link = $user["instagram"];
+    $whatsapp_link = $user["whatsapp"];
+    $linkedin_link = $user["linkedin"];
+    $mail_link = $user["mail"];
+    $twitter_link = $user["twitter"];
+    $youtube_link = $user["youtube"];
+    $phone_link = $user["phone"];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -158,23 +184,27 @@ button{
             <a href="digital_card_profile.html"><button type='button'>View Profile</button></a>
             <a href="dashboard.html"><button type='button' class="active_button">Dashboard</button></a>
             <a href="setting.html"><button type='button'>Setting</button></a>
-        </center>
+        
         
 
         <canvas id="myChart" style="width:100%;max-width:600px;"></canvas>
-        
 
+        <hr/>
+        
+        <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+        
+        </center>
     </div>
 
 
     <script>
         var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone"];
-        var yValues = [55, 49, 44, 24, 15,45,85,14,8];
-        var barColors = ["red", "green","blue","orange","brown","blue","orange","brown"];
+        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>];
+        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58"];
         
         new Chart("myChart", {
             
-          type: "bar",
+          type: "horizontalBar",
           data: {
             labels: xValues,
             datasets: [{
@@ -191,6 +221,32 @@ button{
           }
         });
         </script>
+
+
+
+
+<script>
+        var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone"];
+        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>];
+        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58"];
+
+        new Chart("myChart1", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            title: {
+            display: true,
+            text: ""
+            }
+        }
+        });
+</script>
         
     
 </body>
