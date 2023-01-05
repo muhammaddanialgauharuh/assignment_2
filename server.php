@@ -1,14 +1,15 @@
+<?php include('database_connection.php') ?>
 <?php
 
 session_start();
 
-$host="localhost";
-$user="root";
-$password="";
-$db="digitalcardworld";
+// $host="localhost";
+// $user="root";
+// $password="";
+// $db="digitalcardworld";
 
 
-$db = new mysqli($host,$user,$password,$db);
+// $db = new mysqli($host,$user,$password,$db);
 
 
 // initializing variables
@@ -139,11 +140,6 @@ if (isset($_POST['forgot_password'])){
 }
 
 
-
-
-
-
-
 // edit profile 
 
 
@@ -260,26 +256,47 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 
     if($cover_img_upload_path != ""){
         $sql = "UPDATE profile SET cover = '$cover_img_upload_path' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($display_name != ""){
         $sql = "UPDATE profile SET display_name = '$display_name' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET display_name = '' where id = '$id' ";
+        // echo $sql;
         mysqli_query($db, $sql);
     }
+
     if($job != ""){
         $sql = "UPDATE profile SET job = '$job' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET job = '' where id = '$id' ";
+        // echo $sql;
         mysqli_query($db, $sql);
     }
+
+
     if($bio != ""){
         $sql = "UPDATE profile SET bio = '$bio' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET bio = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
+
+
     if($facebook != ""){
         $sql = "UPDATE profile SET facebook = '$facebook' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET facebook = '' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
     }
@@ -287,14 +304,27 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
         $sql = "UPDATE profile SET instagram = '$instagram' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET instagram = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
     if($whatsapp != ""){
         $sql = "UPDATE profile SET whatsapp = '$whatsapp' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET whatsapp = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
+    
     if($linkedin != ""){
         $sql = "UPDATE profile SET linkedin = '$linkedin' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET linkedin = '' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
     }
@@ -302,9 +332,17 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
         $sql = "UPDATE profile SET gmail = '$mail' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET gmail = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
     if($twitter != ""){
         $sql = "UPDATE profile SET twitter = '$twitter' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET twitter = '' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
     }
@@ -312,14 +350,26 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
         $sql = "UPDATE profile SET youtube = '$youtube' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET youtube = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
     if($phone != ""){
         $sql = "UPDATE profile SET phone = '$phone' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET phone = '' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
     }
     if($website != ""){
         $sql = "UPDATE profile SET website = '$website' where id = '$id' ";
+        echo $sql;
+        mysqli_query($db, $sql);
+    }else{
+        $sql = "UPDATE profile SET website = '' where id = '$id' ";
         echo $sql;
         mysqli_query($db, $sql);
     }

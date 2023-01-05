@@ -1,5 +1,7 @@
+<?php include('database_connection.php') ?>
 <?php include('server.php') ?>
 <?php include('profile_fetching.php') ?>
+
 
 
 
@@ -189,55 +191,59 @@ table td:first-child{
                     <table width="100%">
                         <tr>
                             <td><img src="asset/cover.png" width="50" height="50"/></td>
-                            <td><input name='display_cover' placeholder='Display Cover' type='file' required></td>
+                            <td><input name='display_cover' placeholder='Display Cover' type='file'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/dp.png" width="50" height="50"/></td>
-                            <td><input name='display_picture' placeholder='Display Picture' type='file' required></td>
+                            <td><input name='display_picture' placeholder='Display Picture' type='file'></td>
                         </tr>
                         <tr>
                             <td><img src="asset/name.png" width="50" height="50"/></td>
-                            <td><input name='display_name' placeholder='Display Name' type='text' required></td>
+                            <?php echo "<td><input name='display_name' placeholder='Display Name' type='text' value='$display_name' ></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/job.png" width="50" height="50"/></td>
-                            <td><input name='job' placeholder='Job Position' type='text' required></td>
+                            <?php echo "<td><input name='job' placeholder='Job Position' type='text' value='$job'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/bio.png" width="50" height="50"/></td>
-                            <td><input name='bio' placeholder='Bio' type='text' required></td>
+                            <?php echo "<td><input name='bio' placeholder='Bio' type='text' value='$bio'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/fb.png" width="50" height="50"/></td>
-                            <td><input name='fb' placeholder='Facebook' type='text' required></td>
+                            <?php echo "<td><input name='facebook' placeholder='Facebook' type='text' value='$facebook'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/insta.png" width="50" height="50"/></td>
-                            <td><input name='instagram' placeholder='Instagram' type='text' required></td>
+                            <?php echo "<td><input name='instagram' placeholder='Instagram' type='text' value='$instagram'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/whatsapp.png" width="50" height="50"/></td>
-                            <td><input name='whatsapp' placeholder='+92 333 0376076' type='text' required></td>
+                            <?php echo "<td><input name='whatsapp' placeholder='+92 333 0376076' type='text' value='$whatsapp'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/linkedin.png" width="50" height="50"/></td>
-                            <td><input name='linkedin' placeholder='Linkedin' type='text' required></td>
+                            <?php echo "<td><input name='linkedin' placeholder='Linkedin' type='text' value='$linkedin'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/gmail.png" width="50" height="50"/></td>
-                            <td><input name='mail' placeholder='Gmail' type='text' required></td>
+                            <?php echo "<td><input name='mail' placeholder='Gmail' type='text' value='$mail'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/twitter.png" width="50" height="50"/></td>
-                            <td><input name='twitter' placeholder='Twitter' type='text' required></td>
+                            <?php echo "<td><input name='twitter' placeholder='Twitter' type='text' value='$twitter'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/youtube.png" width="50" height="50"/></td>
-                            <td><input name='youtube' placeholder='Youtube' type='text' required></td>
+                            <?php echo "<td><input name='youtube' placeholder='Youtube' type='text' value='$youtube'></td>" ?>
                         </tr>
                         <tr>
                             <td><img src="asset/phone.png" width="50" height="50"/></td>
-                            <td><input name='phone' placeholder='+92 333 0376076' type='text' required></td>
+                            <?php echo "<td><input name='phone' placeholder='+92 333 0376076' type='text' value='$phone'></td>" ?>
+                        </tr>
+                        <tr>
+                            <td><img src="asset/website.png" width="50" height="50"/></td>
+                            <?php echo "<td><input name='website' placeholder='www.company_website.com' type='text' value='$website'></td>" ?>
                         </tr>
                     </table>
                     <center>

@@ -1,8 +1,8 @@
+<?php include('database_connection.php') ?>
 <?php include('server.php') ?>
 <?php include('profile_fetching.php') ?>
 
 <?php
-
 
     $email = $_SESSION['email'];
     $id = $_SESSION['id'];
@@ -21,6 +21,7 @@
     $twitter_link = $user["twitter"];
     $youtube_link = $user["youtube"];
     $phone_link = $user["phone"];
+    $website_link = $user["website"];
     
 ?>
 
@@ -181,9 +182,9 @@ button{
 
     <div class="container">
         <center>
-            <a href="digital_card_profile.html"><button type='button'>View Profile</button></a>
-            <a href="dashboard.html"><button type='button' class="active_button">Dashboard</button></a>
-            <a href="setting.html"><button type='button'>Setting</button></a>
+            <a href="digital_card_profile.php"><button type='button'>View Profile</button></a>
+            <a href="dashboard.php"><button type='button' class="active_button">Dashboard</button></a>
+            <a href="setting.php"><button type='button'>Setting</button></a>
         
         
 
@@ -198,9 +199,9 @@ button{
 
 
     <script>
-        var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone"];
-        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>];
-        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58"];
+        var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone","Website"];
+        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>, <?php echo $website_link ?>];
+        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58","#FFD700"];
         
         new Chart("myChart", {
             
@@ -226,9 +227,9 @@ button{
 
 
 <script>
-        var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone"];
-        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>];
-        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58"];
+        var xValues = ["Facebook", "Instagram", "WhatsApp", "LinkedIn", "Mail","Twitter","Youtube","Phone","Website"];
+        var yValues = [<?php echo $facebook_link ?>, <?php echo $instagram_link ?>,<?php echo $whatsapp_link ?>,<?php echo $linkedin_link ?>,<?php echo $mail_link ?>, <?php echo $twitter_link ?>,<?php echo $youtube_link ?>,<?php echo $phone_link ?>, <?php echo $website_link ?>];
+        var barColors = ["#4267B2", "#F56040","#25D366","#0077B5","green","#1DA1F2","#FF0000","#0F9D58","#FFD700"];
 
         new Chart("myChart1", {
         type: "doughnut",

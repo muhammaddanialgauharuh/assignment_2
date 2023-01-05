@@ -22,7 +22,6 @@ body {
 }
 
 p{
-
     color:  rgb(71, 71, 71);
 }
 
@@ -67,12 +66,13 @@ button:hover{
 }
 
 a:link, a:visited{
-    color: rgb(71, 71, 71);;
+    color: white;
+    text-decoration: none;
 }
 
-a:hover{
+/* a:hover{
     color: red;
-}
+} */
 
 button{
     width: 31%;

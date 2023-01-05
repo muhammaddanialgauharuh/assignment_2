@@ -1,3 +1,4 @@
+<?php include('database_connection.php') ?>
 <?php include('server.php') ?>
 <?php include('profile_fetching.php') ?>
 
@@ -61,7 +62,7 @@ if(isset($_GET["Active_Theme"])){
                         <a href="tel:<?php echo $phone ?>"><img src="asset/phone.png" width="50" height="50"/></a>
                     </div>
 
-                    <a href="vcf/Danial Gauhar.vcf" download><button type='button' style="width: 60%;"><b>Add to Contact</b></button></a>
+                    <a href="#"><button type='button' style="width: 60%;"><b>Contact Us</b></button></a>
                     <!-- <a href="vcf/Danial Gauhar.txt" download="vcf/Danial Gauhar.vcf"><button type='button' style="width: 40%;">Add to Contact</button></a> -->
                 </center>
             </div>

@@ -1,3 +1,4 @@
+<?php include('database_connection.php') ?>
 <?php include('server.php') ?>
 <?php include('profile_fetching.php') ?>
 

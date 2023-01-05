@@ -1,3 +1,4 @@
+<?php include('database_connection.php') ?>
 <?php include('server.php') ?>
 <?php include('profile_fetching.php') ?>
 
@@ -159,9 +160,9 @@ button{
 
     <div class="container">
         <center>
-            <a href="digital_card_profile.html"><button type='button' class="active_button">View Profile</button></a>
-            <a href="dashboard.html"><button type='button'>Dashboard</button></a>
-            <a href="setting.html"><button type='button'>Setting</button></a>
+            <a href="digital_card_profile.php"><button type='button' class="active_button">View Profile</button></a>
+            <a href="dashboard.php"><button type='button'>Dashboard</button></a>
+            <a href="setting.php"><button type='button'>Setting</button></a>
         </center>
         
         <div class="card">
@@ -188,7 +189,7 @@ button{
                         <a href="tel:<?php echo $phone ?>"><img src="asset/phone.png" width="50" height="50"/></a>
                     </div>
 
-                    <a href="vcf/Danial Gauhar.vcf" download><button type='button' style="width: 60%;"><b>Add to Contact</b></button></a>
+                    <a href="<?php echo $website ?>"><button type='button' style="width: 60%;"><b>Contact Us</b></button></a>
                     <!-- <a href="vcf/Danial Gauhar.txt" download="vcf/Danial Gauhar.vcf"><button type='button' style="width: 40%;">Add to Contact</button></a> -->
                 </center>
             </div>

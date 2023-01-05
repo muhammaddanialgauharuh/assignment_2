@@ -66,10 +66,11 @@ button:hover{
 
 a:link, a:visited{
     color: #fff;
+    text-decoration: none;
 }
 
 a:hover{
-    color: red;
+    color: white;
 }
 
 button{

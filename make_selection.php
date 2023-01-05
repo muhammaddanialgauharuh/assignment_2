@@ -1,3 +1,7 @@
+<?php include('database_connection.php') ?>
+<?php include('server.php') ?>
+<?php include('otpsms.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +85,7 @@ a:hover{
 </head>
 <body>
     <h1>
-        <a href="index.html" style="padding: 20px;"> <-Back </a>
+        <a href="forgot_password.php" style="padding: 20px;"> <-Back </a>
     </h1>
     
     <div class="container">
@@ -89,9 +93,9 @@ a:hover{
         <h2>Make Selection</h2>
         <p>Select which contact details should we use to reset your password?</p>
     </center>
-        <form>
-            <a href="credentials.html"><button type='button'><img src="asset/iphone.png"/><br/>Via SMS:<br/>+921234567891 </button></a>
-            <a href="credentials.html"><button type='button'><img src="asset/mail.png"/><br/>Via Mail:<br/>example@gmail.com </button></a>
+        <form method="post" action="make_selection.php">
+            <button type='submit' name="smsotp"><img src="asset/iphone.png"/><br/>Via SMS:<br/> <?php echo($_SESSION['phone_no']) ?> </button>
+            <button type='button'><img src="asset/mail.png"/><br/>Via Mail:<br/><?php echo($_SESSION['email']) ?></button>
         </form>
         
        
