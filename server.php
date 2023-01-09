@@ -23,10 +23,10 @@ if(isset($_POST['sign'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
   
     if (empty($email)) {
-        array_push($errors, "Email is required");
+        array_push($errors, "Valid Email is required");
     }
     if (empty($password)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Valid Password is required");
     }
   
     if (count($errors) == 0) {
@@ -97,6 +97,8 @@ if (isset($_POST['registration'])) {
     
 
     $card_link = 'http://'.$_SERVER['HTTP_HOST']."/DW/card.php?id=".$id;
+
+    
     // $card_link = 'http://'.$_SERVER['HTTP_HOST']."/card.php?id=".$id ;
 
     $query = "INSERT INTO profile(id,card_link) VALUES('$id','$card_link')";
