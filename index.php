@@ -94,7 +94,8 @@ a:hover{
             <input name='email' placeholder='Username' type="email" required>
             <input name='password' placeholder='Password' type='password' required>
             <br/>
-            <p><a class="forgot_password" href="forgot_password.php">Forgot Password?</a></p>
+            <!-- <p><a class="forgot_password" href="forgot_password.php">Forgot Password?</a></p> -->
+            <br/>
             <button type='submit' name="sign">Sign In</button>
         </form>
         <a href="registration.php"><button type='button'>Registration</button></a>

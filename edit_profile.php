@@ -170,8 +170,8 @@ table td:first-child{
     <div class="container">
         <center>
             <a href="digital_card_profile.php"><button type='button'>View Profile</button></a>
-            <a href="digital_card_profile.dashboard"><button type='button'>Dashboard</button></a>
-            <a href="digital_card_profile.Setting"></a><button type='button'>Setting</button></a>
+            <a href="dashboard.php"><button type='button'>Dashboard</button></a>
+            <a href="setting.php"></a><button type='button'>Setting</button></a>
         </center>
         
         <div class="card">

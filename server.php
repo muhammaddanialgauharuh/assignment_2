@@ -96,7 +96,7 @@ if (isset($_POST['registration'])) {
     $id = $user["id"];
     
 
-    $card_link = 'http://'.$_SERVER['HTTP_HOST']."/Mobile_Computing_Assignment_2/card.php?id=".$id;
+    $card_link = 'http://'.$_SERVER['HTTP_HOST']."/DW/card.php?id=".$id;
     // $card_link = 'http://'.$_SERVER['HTTP_HOST']."/card.php?id=".$id ;
 
     $query = "INSERT INTO profile(id,card_link) VALUES('$id','$card_link')";
@@ -249,7 +249,7 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 
         $sql = "UPDATE profile SET dp = '$img_upload_path' where id = '$id' ";
 
-        echo $sql;
+        // echo $sql;
 
         mysqli_query($db, $sql);
     }
@@ -282,95 +282,95 @@ if (isset($_POST['save']) && isset($_FILES['display_picture']) && isset($_FILES[
 
     if($bio != ""){
         $sql = "UPDATE profile SET bio = '$bio' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET bio = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
 
 
     if($facebook != ""){
         $sql = "UPDATE profile SET facebook = '$facebook' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET facebook = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($instagram != ""){
         $sql = "UPDATE profile SET instagram = '$instagram' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET instagram = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($whatsapp != ""){
         $sql = "UPDATE profile SET whatsapp = '$whatsapp' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET whatsapp = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     
     if($linkedin != ""){
         $sql = "UPDATE profile SET linkedin = '$linkedin' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET linkedin = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($mail != ""){
         $sql = "UPDATE profile SET gmail = '$mail' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET gmail = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($twitter != ""){
         $sql = "UPDATE profile SET twitter = '$twitter' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET twitter = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($youtube != ""){
         $sql = "UPDATE profile SET youtube = '$youtube' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET youtube = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($phone != ""){
         $sql = "UPDATE profile SET phone = '$phone' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET phone = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     if($website != ""){
         $sql = "UPDATE profile SET website = '$website' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }else{
         $sql = "UPDATE profile SET website = '' where id = '$id' ";
-        echo $sql;
+        // echo $sql;
         mysqli_query($db, $sql);
     }
     

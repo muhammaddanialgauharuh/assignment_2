@@ -1,6 +1,5 @@
 <?php include('database_connection.php') ?>
 <?php include('server.php') ?>
-<?php include('otpsms.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +93,7 @@ a:hover{
         <p>Select which contact details should we use to reset your password?</p>
     </center>
         <form method="post" action="make_selection.php">
-            <button type='submit' name="smsotp"><img src="asset/iphone.png"/><br/>Via SMS:<br/> <?php echo($_SESSION['phone_no']) ?> </button>
+            
             <button type='button'><img src="asset/mail.png"/><br/>Via Mail:<br/><?php echo($_SESSION['email']) ?></button>
         </form>
         

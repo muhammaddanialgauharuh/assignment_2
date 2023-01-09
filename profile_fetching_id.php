@@ -31,7 +31,8 @@ if(isset($_GET["id"])){
     $website = $user["website"];
     $theme_css = $user["theme_name"];
 
-    $card_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id."&theme=".$theme_css; 
+    // $card_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id."&theme=".$theme_css;
+    $card_link = 'http://'.$_SERVER['HTTP_HOST']."/DW/card.php?id=".$id; 
     
     // echo "<a href=".$card_link.">hello</a>";
     $query = "UPDATE profile SET card_link='$card_link' WHERE id=$id";
